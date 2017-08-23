@@ -42,12 +42,16 @@ jieba.analyse.set_stop_words('dict/stopwords.txt')
 
 jieba_cut_text = jieba.analyse.textrank(clean_string, topK=3000, withWeight=False, allowPOS=('ns', 'n', 'vn', 'v'))
 
+# TODO::未知的词自动添加为名词
+
 cut_list = [x for x in jieba_cut_text if x.strip() != '']
 
 cut_text = " ".join(cut_list)
 
 # Read the whole text.
 text = cut_text
+
+# TODO::词频统计
 
 # print(text)
 #
